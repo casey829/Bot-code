@@ -8,7 +8,7 @@ function BotsPage() {
   const [allBots, setAllBots] = useState([]);
   const [filters, setFilters] = useState([]);
   
-  //Fetch all bots on component mount
+  //Fetch  bots on component mount
   useEffect(() => {
     const fetchAllBots = async () => {
       try {
@@ -23,7 +23,9 @@ function BotsPage() {
 
     fetchAllBots();
 
-  }, []);   //fetch only once on component mount
+  }, []);   
+
+  
 
 
   const enlistBot = (bot) => {
@@ -43,7 +45,7 @@ function BotsPage() {
   const dischargeBot = async (botId) => {
     try {
       await axios.delete(`http://localhost:8002/bots/${botId}`);
-      // Update the frontend state to remove the bot
+    
       const updatedArmy = yourBotArmy.filter((bot) => bot.id !== botId);
       setYourBotArmy(updatedArmy);
 
@@ -61,7 +63,7 @@ function BotsPage() {
 
   const filteredBots = allBots.filter((bot) => {
     if (filters.length === 0) {
-      return true;    // If no filters selected, show all bots
+      return true;    
     }
     return filters.includes(bot.bot_class);
 

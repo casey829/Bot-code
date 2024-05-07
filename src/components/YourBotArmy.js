@@ -4,7 +4,7 @@ import BotCard from "./BotCard";
 
 function YourBotArmy({ bots, releaseBot, dischargeBot }) {
   const handleRelease = (botId) => {
-    releaseBot(botId); // Call the releaseBot function to remove the bot from the army
+    releaseBot(botId);
 
   };
 

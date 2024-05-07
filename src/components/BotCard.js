@@ -13,9 +13,9 @@ const botTypeClasses = {
  function BotCard({ bot, onClick,  dischargeBot, onRelease }) {
   const handleClick = () => {
     if (bot.enlisted && typeof onRelease === "function") {
-      onRelease();        // Trigger onRelease (releaseBot) if the bot is enlisted
+      onRelease();       
     } else if (!bot.enlisted && typeof onClick === "function") {
-    onClick();     // Trigger onClick (enlistBot) if the bot is not enlisted
+    onClick();    
 
     }
 
